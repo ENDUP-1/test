@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Collection Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c0bcb9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 75px;
+        }
+
+        .user-actions {
+            margin-right: 20px;
+            color: #fff;
+        }
+
+        .user-actions a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        nav {
+            background-color: #3a0abe;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .categories {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .category {
+            display: inline-block;
+            width: 200px;
+            height: 250px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .category img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .category h3 {
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #070707;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .icon {
+            width: 150px;
+            height: 75px;
+            display: inline-block;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="PIC/LOGO.webp" alt="PC Collection Store Logo">
+        </div>
+        <div class="user-actions" id="user-actions">
+            <a href="login.html">Login</a> | <a href="signup.html">Sign Up</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">PC Collection Store</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="categories">
+            <h2>Welcome to PC Collection ??</h2>
+            <h2>A website specialized in computer hardware</h2>
+            <table>
+                <tr>
+                    <td>
+                        <div class="category">
+                            <h3>RAM</h3>
+                            <img src="PIC/RAM.jpeg" width="130" height="190" alt="RAM">
+                            <p>SAR 530</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="category">
+                            <h3>Case</h3>
+                            <img src="PIC/CASE.jpeg" width="180" height="150" alt="Case">
+                            <p>SAR 350</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="category">
+                            <h3>GPU</h3>
+                            <img src="PIC/GPU.jpeg" width="168" height="150" alt="GPU">
+                            <p>SAR 620</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="category">
+                            <h3>Data Storage</h3>
+                            <img src="PIC/DATA STORAGE01.jpeg" width="170" height="150" alt="Data Storage">
+                            <p>SAR 262</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="category">
+                            <h3>CPU</h3>
+                            <img src="PIC/CPU.jpeg" width="150" height="150" alt="CPU">
+                            <p>SAR 1280</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        
+        <section style="text-align: center; margin: 50px;">
+            <a href="payment.html">
+                <img src="PIC/icon_payment.png" class="icon" alt="Go to Payment Page">
+            </a>
+            <p>Click the icon to proceed to the Payment Page</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>If there is any problem, please contact us on email: <a href="mailto:PCCollectionStore@gmail.com" style="color: #fff;">PCCollectionStore@gmail.com</a> | Mobile: 0506798258</p>
+        OR
+        0553646841
+    </footer>
+
+    <script>
+        // Check if the user is logged in
+        const username = localStorage.getItem('username');
+        const userActions = document.getElementById('user-actions');
+
+        if (username) {
+            // Replace "Login | Sign Up" with the username
+            userActions.innerHTML = `<span>Welcome, ${username}</span>`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            max-width: 450px;
+            margin: 60px auto;
+            background-color: #fff;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="password"] {
+            width: 90%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #27ae60;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-container a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #3a0abe;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Login</h2>
+        <form onsubmit="handleLogin(event)">
+            <label for="login">Email or Username:</label>
+            <input type="text" id="login" name="login" placeholder="Enter your email or username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <a href="signup.html">Don't have an account? Sign up</a>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('login').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) {
+                // Simulate successful login
+                localStorage.setItem('username', username);
+                alert('Login successful!');
+                window.location.href = 'main.html'; // Redirect to main page
+            } else {
+                alert('Please enter valid credentials.');
+            }
+        }
+    </script>
+</body>
+</html>
